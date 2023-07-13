@@ -6,8 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "MixinCosmeticArmorVisibility",
-    "MixinCosmeticHeadVisibility"
+    "EntityRenderDispatcherMixin"
   ],
   "injectors": {
     "defaultRequire": 1

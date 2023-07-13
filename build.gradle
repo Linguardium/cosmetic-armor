@@ -15,6 +15,11 @@ repositories {
 		name = "JitPack"
 		url = "https://jitpack.io"
 	}
+
+	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+	}
 	maven {
 		name = "Ladysnake Libs"
 		url = "https://ladysnake.jfrog.io/artifactory/mods"
@@ -23,6 +28,7 @@ repositories {
 		name = "TerraformersMC Maven"
 		url = "https://maven.terraformersmc.com/"
 	}
+
 }
 
 dependencies {
@@ -34,7 +40,14 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "dev.emi:trinkets:${trinkets_version}"
+	modImplementation("dev.emi:trinkets:${trinkets_version}") {
+		exclude module: "modmenu"
+	}
+
+	implementation include("com.github.LlamaLad7:MixinExtras:${project.mixinextras_version}")
+	annotationProcessor("com.github.LlamaLad7:MixinExtras:${project.mixinextras_version}")
+
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.19:${project.geckolib_version}"
 }
 
 processResources {

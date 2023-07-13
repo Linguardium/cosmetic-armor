@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "io.github.apace100.cosmetic_armor.CosmeticArmor"
+    ],
+    "preLaunch": [
+      "io.github.apace100.cosmetic_armor.CosmeticArmorPreLaunch"
     ]
   },
   "mixins": [
